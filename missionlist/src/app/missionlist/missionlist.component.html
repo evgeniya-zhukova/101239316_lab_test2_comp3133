@@ -1,1 +1,7 @@
 <p>missionlist works!</p>
+<h2>{{mission.mission_name | uppercase}} Details</h2>
+<div><span>id: </span>{{mission.launch_year}}</div>
+<div>
+  <label for="name">Mission name: </label>
+  <input id="name" [(ngModel)]="mission.mission_name" placeholder="name">
+</div>
