@@ -7,13 +7,7 @@
   </li>
 </ul>
 
-<div *ngIf="selectedMission">
+<app-missiondetails [mission]="selectedMission"></app-missiondetails>
 
-  <h2>{{selectedMission.mission_name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedMission.launch_year}}</div>
-  <div>
-    <label for="mission-name">Mission name: </label>
-    <input id="mission-name" [(ngModel)]="selectedMission.mission_name" placeholder="name">
-  </div>
 
-</div>
+
