@@ -1,7 +1,19 @@
-<p>missionlist works!</p>
-<h2>{{mission.mission_name | uppercase}} Details</h2>
-<div><span>id: </span>{{mission.launch_year}}</div>
-<div>
-  <label for="name">Mission name: </label>
-  <input id="name" [(ngModel)]="mission.mission_name" placeholder="name">
+<h2>Missions</h2>
+<ul class="missionlist">
+  <li *ngFor="let mission of missionlist"
+      [class.selected]="mission === selectedMission"
+      (click)="onSelect(mission)">
+    <span class="badge">{{mission.launch_year}}</span> {{mission.mission_name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedMission">
+
+  <h2>{{selectedMission.mission_name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedMission.launch_year}}</div>
+  <div>
+    <label for="mission-name">Mission name: </label>
+    <input id="mission-name" [(ngModel)]="selectedMission.mission_name" placeholder="name">
+  </div>
+
 </div>

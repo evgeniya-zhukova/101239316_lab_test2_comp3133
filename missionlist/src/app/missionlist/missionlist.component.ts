@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Mission } from "../models/mission";
+import { MISSIONLIST } from '../models/mock-heroes';
 
 @Component({
   selector: 'app-missionlist',
@@ -7,15 +8,15 @@ import { Mission } from "../models/mission";
   styleUrls: ['./missionlist.component.css']
 })
 export class MissionlistComponent implements OnInit {
-  mission: Mission = {
-    mission_name: "Evgeniya",
-    launch_year: 2555,
-    details: "Sucessful",
-    mission_patch_small: "photo"
-  };
+  missionlist = MISSIONLIST;
+  selectedMission?: Mission;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  onSelect(mission: Mission): void {
+    this.selectedMission = mission;
   }
 }
-
