@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Mission } from "../models/mission";
-import { MISSIONLIST } from '../models/mock-heroes';
+import { Mission } from '../models/mission';
+import { SpacexapiService } from '../network/spacexapi.service';
+
 
 @Component({
   selector: 'app-missionlist',
@@ -8,15 +9,22 @@ import { MISSIONLIST } from '../models/mock-heroes';
   styleUrls: ['./missionlist.component.css']
 })
 export class MissionlistComponent implements OnInit {
-  missionlist = MISSIONLIST;
-  selectedMission?: Mission;
 
-  constructor() { }
+  selectedMission?: Mission;
+  missionlist: Mission[] = [];
+
+  constructor(private spacexapiService: SpacexapiService) { }
 
   ngOnInit() {
+    this.getMissions();
   }
 
   onSelect(mission: Mission): void {
     this.selectedMission = mission;
+  }
+
+  getMissions(): void {
+    this.spacexapiService.getMissions()
+      .subscribe(missionlist => this.missionlist = missionlist);
   }
 }
