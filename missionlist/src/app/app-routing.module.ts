@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
+import { MissionListComponent } from './missionlist/missionlist.component';
+import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
 
+const routes: Routes = [
+  { path: '', redirectTo: '/missionList', pathMatch: 'full' },
+  { path: 'detail/:id', component: MissionDetailsComponent },
+  { path: 'missionList', component: MissionListComponent }
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,13 +1,8 @@
 <h2>Missions</h2>
-<ul class="missionlist">
-  <li *ngFor="let mission of missionlist"
-      [class.selected]="mission === selectedMission"
-      (click)="onSelect(mission)">
-    <span class="badge">{{mission.launch_year}}</span> {{mission.mission_name}}
+<ul class="missionList">
+  <li *ngFor="let mission of missionList">
+    <a routerLink="/detail/{{mission.launch_year}}">
+      <span class="badge">{{mission.launch_year}}</span> {{mission.mission_name}}
+    </a>
   </li>
 </ul>
-
-<app-missiondetails [mission]="selectedMission"></app-missiondetails>
-
-
-

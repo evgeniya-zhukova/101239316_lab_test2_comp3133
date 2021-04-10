@@ -11,13 +11,12 @@ export class SpacexapiService {
   constructor() { }
 
   getMissions(): Observable<Mission[]> {
-    const missionlist = of(MISSIONLIST);
-    return missionlist;
+    const missionList = of(MISSIONLIST);
+    return missionList;
+  }
+
+  getMission(id: number): Observable<Mission> {
+    const mission = MISSIONLIST.find(h => h.launch_year === id) as Mission;
+    return of(mission);
   }
 }
-
-
-
-
-
-

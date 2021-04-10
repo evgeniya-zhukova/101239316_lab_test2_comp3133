@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Mission } from "../models/mission";
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Mission } from '../models/mission';
+import { SpacexapiService } from '../network/spacexapi.service';
 
 @Component({
   selector: 'app-missiondetails',
@@ -7,12 +10,27 @@ import { Mission } from "../models/mission";
   styleUrls: ['./missiondetails.component.css']
 })
 
-export class MissiondetailsComponent implements OnInit {
-  @Input() mission?: Mission;
+export class MissionDetailsComponent implements OnInit {
+  mission: Mission;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private route: ActivatedRoute,
+    private spacexapiService: SpacexapiService,
+    private location: Location
+  ) {
   }
 
+  ngOnInit(): void {
+    this.getMission();
+  }
+
+  getMission(): void {
+    const id = +this.route.snapshot.paramMap.get('launch_year');
+    this.spacexapiService.getMission(id)
+      .subscribe(mission => this.mission = mission);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

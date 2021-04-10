@@ -8,10 +8,10 @@ import { SpacexapiService } from '../network/spacexapi.service';
   templateUrl: './missionlist.component.html',
   styleUrls: ['./missionlist.component.css']
 })
-export class MissionlistComponent implements OnInit {
 
-  selectedMission?: Mission;
-  missionlist: Mission[] = [];
+export class MissionListComponent implements OnInit {
+
+  missionList: Mission[];
 
   constructor(private spacexapiService: SpacexapiService) { }
 
@@ -19,12 +19,8 @@ export class MissionlistComponent implements OnInit {
     this.getMissions();
   }
 
-  onSelect(mission: Mission): void {
-    this.selectedMission = mission;
-  }
-
   getMissions(): void {
     this.spacexapiService.getMissions()
-      .subscribe(missionlist => this.missionlist = missionlist);
+      .subscribe(missionList => this.missionList = missionList);
   }
 }

@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
-import { MissionlistComponent } from './missionlist/missionlist.component';
-import { MissiondetailsComponent } from './missiondetails/missiondetails.component';
+import { MissionListComponent } from './missionlist/missionlist.component';
+import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MissionlistComponent,
-    MissiondetailsComponent
+    MissionListComponent,
+    MissionDetailsComponent
   ],
   imports: [
     BrowserModule,
