@@ -10,7 +10,6 @@ import { SpacexapiService } from '../network/spacexapi.service';
 })
 
 export class MissionListComponent implements OnInit {
-
   missionList: Mission[];
 
   constructor(private spacexapiService: SpacexapiService) { }

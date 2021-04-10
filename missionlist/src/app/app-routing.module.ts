@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { MissionListComponent } from './missionlist/missionlist.component';
 import { MissionDetailsComponent } from './missiondetails/missiondetails.component';
 

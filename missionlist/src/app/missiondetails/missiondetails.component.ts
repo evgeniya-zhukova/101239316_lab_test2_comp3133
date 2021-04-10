@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Mission } from '../models/mission';
@@ -17,15 +17,14 @@ export class MissionDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private spacexapiService: SpacexapiService,
     private location: Location
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.getMission();
   }
 
   getMission(): void {
-    const id = +this.route.snapshot.paramMap.get('launch_year');
+    const id = +this.route.snapshot.paramMap.get('flight_number');
     this.spacexapiService.getMission(id)
       .subscribe(mission => this.mission = mission);
   }

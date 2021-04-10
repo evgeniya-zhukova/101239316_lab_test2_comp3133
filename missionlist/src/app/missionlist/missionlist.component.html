@@ -1,8 +1,8 @@
 <h2>Missions</h2>
 <ul class="missionList">
   <li *ngFor="let mission of missionList">
-    <a routerLink="/detail/{{mission.launch_year}}">
-      <span class="badge">{{mission.launch_year}}</span> {{mission.mission_name}}
+    <a routerLink="/detail/{{mission.flight_number}}">
+      <span class="badge">{{mission.flight_number}}</span> {{mission.mission_name}}
     </a>
   </li>
 </ul>
