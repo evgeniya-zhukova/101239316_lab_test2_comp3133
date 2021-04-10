@@ -28,15 +28,15 @@ export class SpacexapiService {
     const url = `${this.REST_API_SERVER}/?id=${id}`;
     return this.http.get<Mission[]>(url)
       .pipe(
-        map(heroes => heroes[0]), // returns a {0|1} element array
-        catchError(this.handleError<Mission>(`getHero id=${id}`))
+        map(missionList => missionList[0]), // returns a {0|1} element array
+        catchError(this.handleError<Mission>(`getMission id=${id}`))
       );
   }
 
-  getMission(id: number): Observable<Mission> {
-    const url = `${this.REST_API_SERVER}/${id}`;
+  getMission(flight_number: number): Observable<Mission> {
+    const url = `${this.REST_API_SERVER}/${flight_number}`;
     return this.http.get<Mission>(url).pipe(
-      catchError(this.handleError<Mission>(`getMission id=${id}`))
+      catchError(this.handleError<Mission>(`getMission flight_number=${flight_number}`))
     );
   }
 

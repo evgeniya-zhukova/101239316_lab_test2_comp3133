@@ -24,8 +24,8 @@ export class MissionDetailsComponent implements OnInit {
   }
 
   getMission(): void {
-    const id = +this.route.snapshot.paramMap.get('flight_number');
-    this.spacexapiService.getMission(id)
+    const flight_number = +this.route.snapshot.paramMap.get('flight_number');
+    this.spacexapiService.getMission(flight_number)
       .subscribe(mission => this.mission = mission);
   }
 

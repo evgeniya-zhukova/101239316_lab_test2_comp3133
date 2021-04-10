@@ -5,7 +5,7 @@ import { MissionDetailsComponent } from './missiondetails/missiondetails.compone
 
 const routes: Routes = [
   { path: '', redirectTo: '/missionList', pathMatch: 'full' },
-  { path: 'detail/:id', component: MissionDetailsComponent },
+  { path: 'detail/:flight_number', component: MissionDetailsComponent },
   { path: 'missionList', component: MissionListComponent }
 ];
 

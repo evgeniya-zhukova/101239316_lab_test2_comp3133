@@ -1,10 +1,11 @@
 <div *ngIf="mission">
 
   <h2>{{mission.mission_name | uppercase}} Details</h2>
-  <div><span>id: </span>{{mission.flight_number}}</div>
-  <div>
-    <label for="mission-name">Mission name: </label>
-    <input id="mission-name" [(ngModel)]="mission.mission_name" placeholder="name">
-  </div>
+  <div><label>Flight Number: </label>{{mission.flight_number}}</div>
+  <div><label>Mission Name: </label>{{mission.mission_name}}</div>
+  <div><label>Launch Year: </label>{{mission.launch_year}}</div>
+  <div><label>Details: </label>{{mission.details}}</div>
+  <div><label>Mission Patch Small: </label>{{mission.mission_patch_small}}</div>
   <button (click)="goBack()">go back</button>
 </div>
+
