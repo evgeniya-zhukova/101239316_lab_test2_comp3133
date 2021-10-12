@@ -1,2 +1,7 @@
-# 101239316_lab_test2_comp3133
-SpaceX list Lab Test2 Full Stack II 
+# SpaceX list app
+
+## Used Technologies:
+Angular, GraphQL, MongoDB
+
+## Description:
+The application is an individual project.
