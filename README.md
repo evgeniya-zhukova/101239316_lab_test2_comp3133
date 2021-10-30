@@ -1,7 +1,7 @@
-# SpaceX list app
+# SpaceX Mission Launch List
 
 ## Used Technologies:
-Angular, GraphQL, MongoDB
+Angular, Angular Material, REST API
 
 ## Description:
 The application is an individual project.
