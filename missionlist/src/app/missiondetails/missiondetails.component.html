@@ -1,18 +1,15 @@
-<div *ngIf="mission">
-
+<mat-card *ngIf="mission">
   <h2>{{mission.mission_name | uppercase}} Details</h2>
-  <mat-card>
-    <img mat-card-image src= "{{ mission.mission_patch_small }}"/>
-    <mat-card-header>
-      <img mat-card-avatar src= "{{ mission.mission_patch_small }}"  alt="logo"/>
-      <mat-card-title> {{ mission.flight_number }} - {{ mission.mission_name }} </mat-card-title>
-      <mat-card-subtitle>Launch Year:  {{ mission.launch_year }}</mat-card-subtitle>
-      <mat-card-subtitle>Details: {{ mission.details }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-footer>
-      <button (click)="goBack()">go back</button>
-    </mat-card-footer>
-  </mat-card>
-</div>
-
+  <mat-card-title-group>
+    <mat-card-title> {{ mission.flight_number }} - {{ mission.mission_name }} </mat-card-title>
+  </mat-card-title-group>
+    <mat-card-content>
+      <img mat-card-md-image src= "{{ mission.links.mission_patch_small }}"  alt="logo"/>
+      <div mat-line>Launch Year:  {{ mission.launch_year }}</div>
+      <div mat-line>Rocket Type:  {{ mission.rocket.rocket_type }}</div>
+      <div mat-line>Launch Success:  {{ mission.launch_success }}</div>
+      <div mat-line>Details: {{ mission.details }}</div>
+    </mat-card-content>
+      <button (click)="goBack()">Back to Main Menu</button>
+</mat-card>
 

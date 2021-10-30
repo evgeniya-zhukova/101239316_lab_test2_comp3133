@@ -1,19 +1,19 @@
 <h2>Missions</h2>
 <mat-spinner *ngIf="missionList.length === 0"></mat-spinner>
 <h1>Total Missions: {{ missionList.length }}</h1>
-<ul class="missionList">
-  <mat-card *ngFor="let mission of missionList">
-    <a routerLink="/detail/{{mission.flight_number}}">
+<mat-card *ngFor="let mission of missionList">
+  <mat-card-title-group>
+    <mat-card-title>
+      <a routerLink="/detail/{{mission.flight_number}}">
       <span class="badge">{{mission.flight_number}}</span> {{mission.mission_name}}
-    </a>
-    <img mat-card-image src= "{{ mission.mission_patch_small }}" />
-    <mat-card-header>
-      <img mat-card-avatar src= "{{ mission.mission_patch_small }}"  alt="logo"/>
-      <mat-card-subtitle>Launch Year:  {{ mission.launch_year }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>Details: {{ mission.details }}</mat-card-content>
-  </mat-card>
-</ul>
-
-
-
+      </a>
+    </mat-card-title>
+  </mat-card-title-group>
+  <mat-card-content>
+    <img mat-card-md-image src= "{{ mission.links.mission_patch_small }}"  alt="logo"/>
+    <div mat-line>Launch Year:  {{ mission.launch_year }}</div>
+    <div mat-line>Rocket Type:  {{ mission.rocket.rocket_type }}</div>
+    <div mat-line>Launch Success:  {{ mission.launch_success }}</div>
+    <div mat-line>Details: {{ mission.details }}</div>
+  </mat-card-content>
+</mat-card>
