@@ -4,7 +4,7 @@
 Angular, Angular Material, REST API (https://api.spacexdata.com/v3/launches)
 
 ## Description:
-The application is an individual project. The app shows a list of 111 Space X missions. A user can tap on a particular mission to see a page with this mission details.
+This application is an individual project. The app takes data of 111 SpaceX missions provided in JSON format from the SpaceX website and displays it for a user to read. A user can click on a particular mission to see a page with specific mission details.
 
 ## Screenshots:
 ### *Mission List:*
