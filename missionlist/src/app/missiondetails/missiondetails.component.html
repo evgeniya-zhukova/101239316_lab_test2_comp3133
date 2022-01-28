@@ -1,15 +1,21 @@
+
 <mat-card *ngIf="mission">
   <h2>{{mission.mission_name | uppercase}} Details</h2>
   <mat-card-title-group>
-    <mat-card-title> {{ mission.flight_number }} - {{ mission.mission_name }} </mat-card-title>
+    <mat-card-title> {{ mission.mission_name }} </mat-card-title>
   </mat-card-title-group>
-    <mat-card-content>
-      <img mat-card-md-image src= "{{ mission.links.mission_patch_small }}"  alt="logo"/>
-      <div mat-line>Launch Year:  {{ mission.launch_year }}</div>
-      <div mat-line>Rocket Type:  {{ mission.rocket.rocket_type }}</div>
-      <div mat-line>Launch Success:  {{ mission.launch_success }}</div>
-      <div mat-line>Details: {{ mission.details }}</div>
+    <mat-card-content><br>
+      <img mat-card-md-image src= "{{ mission.links.mission_patch_small }}"  alt="logo"/><br><br>
+      <div mat-line><b>Mission #:</b>  {{mission.flight_number}}</div>      
+      <div mat-line><b>Rocket Name:</b>  {{ mission.rocket.rocket_name }}</div>
+      <div mat-line><b>Rocket Type:</b>  {{ mission.rocket.rocket_type }}</div>
+      <div mat-line><b>Launch Year:</b>  {{ mission.launch_year }}</div>
+      <div mat-line><b><ins> Launch Success:  {{ mission.launch_success }}</ins></b></div>
+      <div mat-line><b>Launch Site:</b>  {{ mission.launch_site.site_name_long }}</div>
+      <div mat-line><b>Details:</b> {{ mission.details }}</div><br>
+      <div mat-line><b>Article Link:</b> <a href = "{{ mission.links.article_link }}"> {{ mission.links.article_link }}</a></div><br>
+      <div mat-line><b>Video Link:</b> <a href = "{{ mission.links.video_link }}"> {{ mission.links.video_link }}</a></div>
     </mat-card-content>
-      <button (click)="goBack()">Back to Main Menu</button>
+      <button mat-raised-button color="primary" (click)="goBack()">Back to Main Page</button>
 </mat-card>
 

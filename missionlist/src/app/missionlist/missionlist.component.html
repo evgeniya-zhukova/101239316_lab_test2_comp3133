@@ -1,19 +1,19 @@
-<h2>Missions</h2>
 <mat-spinner *ngIf="missionList.length === 0"></mat-spinner>
-<h1>Total Missions: {{ missionList.length }}</h1>
+<h2><i>Total # of Missions: {{ missionList.length }}</i></h2>
+<mat-divider></mat-divider>
 <mat-card *ngFor="let mission of missionList">
   <mat-card-title-group>
     <mat-card-title>
-      <a routerLink="/detail/{{mission.flight_number}}">
-      <span class="badge">{{mission.flight_number}}</span> {{mission.mission_name}}
-      </a>
+      <img mat-card-md-image src= "{{ mission.links.mission_patch_small }}"  alt="logo"/><br><br>
+      <span class="badge"> {{mission.mission_name}}</span>
     </mat-card-title>
   </mat-card-title-group>
   <mat-card-content>
-    <img mat-card-md-image src= "{{ mission.links.mission_patch_small }}"  alt="logo"/>
-    <div mat-line>Launch Year:  {{ mission.launch_year }}</div>
-    <div mat-line>Rocket Type:  {{ mission.rocket.rocket_type }}</div>
-    <div mat-line>Launch Success:  {{ mission.launch_success }}</div>
-    <div mat-line>Details: {{ mission.details }}</div>
+    <div mat-line><b>Mission #:</b>  {{mission.flight_number}}</div>
+    <div mat-line><b>Launch Year:</b>  {{ mission.launch_year }}</div>
+    <div mat-line><b><ins> Launch Success:  {{ mission.launch_success }}</ins></b></div>
+    <div mat-line><b>Details:</b> {{ mission.details }}</div><br>
+    <button mat-raised-button color="primary" routerLink="/detail/{{mission.flight_number}}" class="button">Mission Details</button>
   </mat-card-content>
+  <mat-divider></mat-divider>
 </mat-card>

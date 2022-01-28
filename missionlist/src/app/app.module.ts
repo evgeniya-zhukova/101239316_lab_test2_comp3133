@@ -60,7 +60,8 @@ import { MatTreeModule } from '@angular/material/tree';
     MatCardModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
